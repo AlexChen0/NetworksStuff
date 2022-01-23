@@ -13,17 +13,28 @@ def main():
     accept.bind(("", port))
     accept.listen()
     
-    #accept new connection, read HTTP request 
-    client, address = accept.accept()
-    response = client.recv(4096)
-    parse = response.decode("utf-8").split("\r\n")
-    paths = parse[0].split("/")[1]
-    if len(paths.split(".")) < 2:
-        sys.stderr.write("404") 
-    elif paths.split(".")[1] != "html" or len(paths.split(".")[1] != "htm":
-        sys.stderr.write("403")
-    elif os.path.isfile(os.getcwd() + paths.split(".")[1]):
-        os.path.isfile(os.getcwd() + paths.split(".")[1])
+    while True:
+        response = b''
+        #accept new connection, read HTTP request 
+        client, address = accept.accept()
+        recvs = client.recv(4096)
+
+        #get response
+        parse = recvs.decode("utf-8").split("\r\n")
+        #get html
+        paths = parse[0].split("/")[1]
+        #check if file exists
+        if len(paths.split(".")) < 2:
+            error = 'HTTP/1.1 404 Not Found\r\n'.encode()
+            response = response + error
+        #check if file exists but doesn't end if .html or .htm
+        elif paths.split(".")[1] != "html" or paths.split(".")[1] != "htm":
+            error = 'HTTP/1.1 403 Forbidden\r\n'.encode()
+            response = response + error
+        #check if file is int directory
+        elif os.path.isfile(os.getcwd() + paths.split(".")[1]):
+            status = 'HTTP/1.1 200 OK\r\n'
+            
     
 
 
