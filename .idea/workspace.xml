@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/HTTP_server1.py" beforeDir="false" afterPath="$PROJECT_DIR$/HTTP_server1.py" afterDir="false" />
+    </list>
+    <list id="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" name="Changes by bill" comment="">
+      <change beforePath="$PROJECT_DIR$/HTTP_server1.py" beforeDir="false" afterPath="$PROJECT_DIR$/HTTP_server1.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/HTTP_server1.py">
+      <ranges>
+        <range start1="4" end1="4" start2="4" end2="6" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="6" end1="7" start2="8" end2="9" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="10" end1="11" start2="12" end2="13" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="14" end1="15" start2="16" end2="17" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="17" end1="18" start2="19" end2="20" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="24" end1="25" start2="26" end2="28" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="30" end1="31" start2="33" end2="34" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="34" end1="38" start2="37" end2="50" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="42" end1="42" start2="54" end2="55" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="" />
+      <created>1642975064049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1642975064049</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

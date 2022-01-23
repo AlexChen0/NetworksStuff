@@ -1,0 +1,20 @@
+Index: HTTP_server1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from genericpath import isfile\r\nimport socket\r\nimport sys\r\nimport os\r\ndef main():\r\n    port = int(sys.argv[1])\r\n    #check port number\r\n    if port < 1024:\r\n        sys.stderr.write(\"port number not high enough\")\r\n        sys.exit(1)\r\n    #create acceptsocket, bind, listen\r\n    accept = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\r\n    accept.bind((\"\", port))\r\n    accept.listen()\r\n    \r\n    #accept new connection, read HTTP request \r\n    client, address = accept.accept()\r\n    response = client.recv(4096)\r\n    parse = response.decode(\"utf-8\").split(\"\\r\\n\")\r\n    paths = parse[0].split(\"/\")[1]\r\n    if len(paths.split(\".\")) < 2:\r\n        sys.stderr.write(\"404\") \r\n    elif paths.split(\".\")[1] != \"html\" or len(paths.split(\".\")[1] != \"htm\":\r\n        sys.stderr.write(\"403\")\r\n    elif os.path.isfile(os.getcwd() + paths.split(\".\")[1]):\r\n        os.path.isfile(os.getcwd() + paths.split(\".\")[1])\r\n    \r\n\r\n\r\nif __name__ == \"__main__\":\r\n    main()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/HTTP_server1.py b/HTTP_server1.py
+--- a/HTTP_server1.py	(revision af6c5d53d13a5c8b68264b164fc5bb1d247385ed)
++++ b/HTTP_server1.py	(date 1642975539457)
+@@ -24,8 +24,6 @@
+         sys.stderr.write("403")
+     elif os.path.isfile(os.getcwd() + paths.split(".")[1]):
+         os.path.isfile(os.getcwd() + paths.split(".")[1])
+-    
+ 
+-
+ if __name__ == "__main__":
+     main()
+\ No newline at end of file
