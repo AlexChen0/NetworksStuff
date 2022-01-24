@@ -2,16 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HTTP_server3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTTP_server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/HTTP_server2.py" afterDir="false" />
     </list>
-    <list id="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" name="Changes by bill" comment="" />
+    <list id="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" name="Changes by bill" comment="">
+      <change beforePath="$PROJECT_DIR$/HTTP_server2.py" beforeDir="false" afterPath="$PROJECT_DIR$/HTTP_server2.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/HTTP_server2.py">
+      <ranges>
+        <range start1="4" end1="5" start2="4" end2="6" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="12" end1="13" start2="13" end2="15" changelist="b56367ff-2d56-4c6e-9b3a-5f6e68dc7030" />
+        <range start1="14" end1="16" start2="16" end2="41" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="17" end1="50" start2="42" end2="124" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
   <component name="ProjectViewState">
