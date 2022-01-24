@@ -24,7 +24,6 @@ def main():
         #get response
         parse = recvs.decode("utf-8").split("\r\n")
         #get html
-        print(parse)
         paths = parse[0].split()[1].split("/")[1]
         #check if file exists
         if len(paths.split(".")) < 2:
