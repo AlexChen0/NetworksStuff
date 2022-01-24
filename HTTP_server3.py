@@ -13,7 +13,7 @@ def main():
     # create acceptsocket, bind, listen
     accept = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     accept.bind(("", port))
-    accept.listen()
+    accept.listen(1)
 
     while True:
         response = b''
@@ -24,32 +24,40 @@ def main():
         #get response
         parse = recvs.decode("utf-8").split("\r\n")
         #get html
-        product = parse[1].split("?")[0]
-        inputs = parse[1].split("?")[1].split("&")
-        numbers = []
+        product = parse[0].split("?")[0]
+
         error = ''.encode()
         #check if product
-        if product != "/product":
+        if product.split()[1] != "/product":
             error = 'HTTP/1.1 404 Not Found\r\n'.encode()
+            response = response + error
+            print(product)
+            client.sendall(response)
+            client.close()
+            continue
+        elif len(parse[0].split("?")) == 1:
+            error = 'HTTP/1.1 400 Bad Request\r\n'.encode()
             response = response + error
             client.sendall(response)
             client.close()
-        elif len(parse[1].split("?")) == 1:
-            error = 'HTTP/1.1 400 Bad Request\r\n'.encode()
-            client.sendall(response)
-            client.close()
+            continue
         #check for numbers
+        inputs = parse[0].split("?")[1].split()[0].split("&")
+        numbers = []
+        isNumber = True
         for i in inputs:
             #try-except from https://stackoverflow.com/questions/736043/checking-if-a-string-can-be-converted-to-float-in-python
             try:
                 checkNum = i.split("=")[1]
                 numbers.append(float(checkNum))
-            except ValueError:
-                error = 'HTTP/1.1 400 Bad Request\r\n'.encode()
-                client.sendall(response)
-                client.close()
-                break
-        response = response + error
+            except:
+                isNumber = False
+        if not isNumber:
+            error = 'HTTP/1.1 400 Bad Request\r\n'.encode()
+            response = response + error
+            client.sendall(response)
+            client.close()
+            continue
 
         product = 1
         for i in numbers:
@@ -68,7 +76,10 @@ def main():
         length = length.encode()
         type = 'Connection-Type: application/json \r\n\r\n'.encode()
         response = response + length + type + responseButjson
-        client.sendall(response)
+        client.sendall(status)
+        client.sendall(length)
+        client.sendall(type)
+        client.sendall(responseButjson)
         client.close()
 
 
