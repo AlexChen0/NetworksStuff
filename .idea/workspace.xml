@@ -4,11 +4,8 @@
     <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/streamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/streamer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/test.py" afterDir="false" />
     </list>
-    <list id="247aef8c-c27b-4479-9aaf-3b34288ac0ef" name="Changes by bill" comment="">
-      <change beforePath="$PROJECT_DIR$/lab2/streamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/streamer.py" afterDir="false" />
-    </list>
+    <list id="247aef8c-c27b-4479-9aaf-3b34288ac0ef" name="Changes by bill" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,16 +20,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/lab2/streamer.py">
-      <ranges>
-        <range start1="4" end1="5" start2="4" end2="5" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
-        <range start1="15" end1="16" start2="15" end2="18" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
-        <range start1="21" end1="23" start2="23" end2="35" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
-        <range start1="29" end1="31" start2="41" end2="63" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
   <component name="ProjectViewState">

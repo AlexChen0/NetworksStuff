@@ -42,7 +42,7 @@ class Streamer:
         #take a look at the header we made
         header = data[:3]
         decodedseq = header.decode('utf-8')
-        #packets = []
+        packets = []
         if decodedseq == self.sequence_number:
             nextseqnumfound = True
             while nextseqnumfound and self.sequence_number != self.max_seqnum:
@@ -57,7 +57,15 @@ class Streamer:
                         self.sequence_number += 1
                     else:
                         break
-            #return packets
+            if self.sequence_number == self.max_seqnum:
+                #this query is done, reset both values
+                self.max_seqnum = 0
+            #return all packets together
+            returnable = packets[0]
+            for i in range(1, len(packets), 1):
+                #stitch packets together
+                returnable += packets[i]
+            return returnable
         else:
             self.rb.append(data)
             return b''
