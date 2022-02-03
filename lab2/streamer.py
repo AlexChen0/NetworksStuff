@@ -14,7 +14,7 @@ class Streamer:
         self.dst_ip = dst_ip
         self.dst_port = dst_port
         self.sequence_number = 0
-        self.max_seqnum = 0
+        self.rec_num = 0
         self.rb = []
     def send(self, data_bytes: bytes) -> None:
         """Note that data_bytes can be larger than one packet."""
@@ -31,8 +31,8 @@ class Streamer:
             sendable = str(self.sequence_number).encode('utf-8') + i
             self.socket.sendto(sendable, (self.dst_ip, self.dst_port))
             self.sequence_number += 1
-            self.max_seqnum += 1
-        self.sequence_number = 0
+        print(self.sequence_number)
+        #self.sequence_number = 0
     def recv(self) -> bytes:
         """Blocks (waits) if no data is ready to be read from the connection."""
         # your code goes here!  The code below should be changed!
@@ -40,31 +40,33 @@ class Streamer:
         # this sample code just calls the recvfrom method on the LossySocket
         data, addr = self.socket.recvfrom()
         #take a look at the header we made
+        #print("we got to line 43 lol")
         header = data[:3]
         decodedseq = header.decode('utf-8')
+        print(decodedseq)
         packets = []
-        if decodedseq == self.sequence_number:
+        if int(decodedseq) == self.rec_num:
+            print("nextseqfound")
             nextseqnumfound = True
-            while nextseqnumfound and self.sequence_number != self.max_seqnum:
+            while nextseqnumfound and packets:
                 nextseqnumfound = False
                 packets.append(data)
-                self.sequence_number += 1
+                self.rec_num += 1
                 for i in self.rb:
-                    if self.sequence_number == i[:3].decode('utf-8'):
+                    if self.rec_num == int(i[:3].decode('utf-8')):
                         nextseqnumfound = True
                         packets.append(i)
                         self.rb.pop(0)
-                        self.sequence_number += 1
+                        self.rec_num += 1
+                        print(self.rec_num)
                     else:
                         break
-            if self.sequence_number == self.max_seqnum:
-                #this query is done, reset both values
-                self.max_seqnum = 0
             #return all packets together
-            returnable = packets[0]
-            for i in range(1, len(packets), 1):
+            returnable = b''
+            for i in range(len(packets)):
                 #stitch packets together
                 returnable += packets[i]
+            print("we can return things")
             return returnable
         else:
             self.rb.append(data)
