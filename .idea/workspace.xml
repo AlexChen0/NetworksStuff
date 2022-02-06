@@ -4,9 +4,10 @@
     <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/streamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/streamer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/test.py" afterDir="false" />
     </list>
-    <list id="247aef8c-c27b-4479-9aaf-3b34288ac0ef" name="Changes by bill" comment="" />
+    <list id="247aef8c-c27b-4479-9aaf-3b34288ac0ef" name="Changes by bill" comment="">
+      <change beforePath="$PROJECT_DIR$/lab2/streamer.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/streamer.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +22,27 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/lab2/streamer.py">
+      <ranges>
+        <range start1="7" end1="8" start2="7" end2="9" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="40" end1="41" start2="41" end2="42" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="42" end1="43" start2="43" end2="45" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="44" end1="44" start2="46" end2="48" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="65" end1="65" start2="69" end2="71" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="71" end1="72" start2="77" end2="78" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="111" end1="112" start2="117" end2="119" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="139" end1="139" start2="146" end2="150" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="143" end1="144" start2="154" end2="155" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="145" end1="146" start2="156" end2="158" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="148" end1="149" start2="160" end2="161" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="150" end1="152" start2="162" end2="164" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="153" end1="154" start2="165" end2="166" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="156" end1="157" start2="168" end2="169" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="167" end1="167" start2="179" end2="184" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
   <component name="ProjectViewState">

@@ -5,7 +5,8 @@ from socket import INADDR_ANY
 import struct
 from concurrent.futures import ThreadPoolExecutor
 import time
-
+import hashlib
+from threading import Timer
 
 class Streamer:
     def __init__(self, dst_ip, dst_port,
@@ -38,10 +39,13 @@ class Streamer:
         # jk we love u
         # split into pieces
         # part 2: remove some from 1472 to be able to add header
-        data = [data_bytes[i:i + 1468] for i in range(0, len(data_bytes), 1468)]
+        data = [data_bytes[i:i + 1452] for i in range(0, len(data_bytes), 1452)]
         for i in data:
-            sendable = struct.pack('hh', self.sequence_number, 0) + i
+            hash = hashlib.md5(self.sequence_number.to_bytes(2,'big') + i).digest()
+            sendable = struct.pack('hh', self.sequence_number, 0) + hash + i
             self.socket.sendto(sendable, (self.dst_ip, self.dst_port))
+            # need to use lock to lock in self.sequence_number so that it won't resend with wrong sequence number, but don't know how to do that
+            Timer(0.1, lambda: self.resend(0.1, self.sequence_number, sendable)).start()
             self.ack = False
             self.last_sent = self.sequence_number
             self.sequence_number += 1
@@ -63,13 +67,15 @@ class Streamer:
         # data, addr = self.socket.recvfrom()
         # take a look at the header we made
         # print("we got to line 43 lol")
+        data, addr = self.socket.recvfrom()
+
         packets = []
 
         if self.rb:
             for i in self.rb:
                 if self.rec_num == int(struct.unpack('hh', i[:4])[0]):
                     # nextseqnumfound = True
-                    packets.append(i[4:])
+                    packets.append(i[20:])
                     self.rb.remove(i)
                     self.rec_num += 1
             returnable = b''
@@ -109,7 +115,8 @@ class Streamer:
         """Cleans up. It should block (wait) until the Streamer is done with all
            the necessary ACKs and retransmissions"""
         # your code goes here, especially after you add ACKs and retransmissions.
-        sendable = struct.pack('hh', self.sequence_number, 2)
+        hash_data = hashlib.md5(self.sequence_number.to_bytes(2, 'big') + b'2').digest()
+        sendable = struct.pack('hh', self.sequence_number, 2) + hash_data
         self.socket.sendto(sendable, (self.dst_ip, self.dst_port))
         self.finack = False
         self.fin = False
@@ -137,24 +144,29 @@ class Streamer:
                 if len(data) == 0:
                     #do nothing
                     break
+
+                ack = struct.unpack('hh', data[:4])[1]
+                sequence = struct.unpack('hh', data[:4])[0]
+                hash = data[4:20]
                 # store the data in the receive buffer
                 # see if ack or data
                 #if len(data) < 0:
                 #    continue
-                if int(struct.unpack('hh', data[:4])[1]) == 0:
+                if int(ack) == 0 and hash == hashlib.md5(sequence.to_bytes(2,'big') + data[20:]).digest():
                     self.rb.append(data)
-                    datapacket = struct.pack('hh', struct.unpack('hh', data[:4])[0], 1) + data
+                    hash_data = hashlib.md5(sequence.to_bytes(2,'big') + b'1').digest()
+                    datapacket = struct.pack('hh', struct.unpack('hh', data[:4])[0], 1) + hash_data
                     self.socket.sendto(datapacket, (self.dst_ip, self.dst_port))
                     self.ack = False
-                elif int(struct.unpack('hh', data[:4])[1]) == 2:
+                elif int(ack) == 2 and hash == hashlib.md5(sequence.to_bytes(2, 'big') + b'2').digest():
                     #fin
-                    datapacket = struct.pack('hh', struct.unpack('hh', data[:4])[0], 3)
-                    self.socket.sendto(datapacket, (self.dst_ip, self.dst_port))
+                    hash_data = hashlib.md5(sequence.to_bytes(2, 'big') + b'3').digest()
+                    datapacket = struct.pack('hh', struct.unpack('hh', data[:4])[0], 3) + hash_data
                     self.fin = True
-                elif int(struct.unpack('hh', data[:4])[1]) == 3:
+                elif int(ack) == 3 and hash == hashlib.md5(sequence.to_bytes(2, 'big') + b'3').digest():
                     #finack
                     self.finack = True
-                else:
+                elif int(ack) == 1 and hash == hashlib.md5(sequence.to_bytes(2, 'big') + b'1').digest():
                     # ack. store something that can be checked by the main thread
                     if self.last_sent == struct.unpack('hh', data[:4])[0]:
                         self.ack = True
@@ -164,3 +176,9 @@ class Streamer:
             except Exception as e:
                 print("listener died!")
                 print(e)
+
+    def resend(self, time, sequence, packet):
+        print(sequence, self.last_sent)
+        if sequence > self.last_sent and not self.closed:
+            self.socket.sendto(packet, (self.dst_ip, self.dst_port))
+            Timer(time, lambda: self.resend(time, sequence, packet)).start()
