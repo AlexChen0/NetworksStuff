@@ -52,24 +52,24 @@ class Streamer:
             sendable = struct.pack('hh', self.sequence_number, 0) + hash + i
             self.socket.sendto(sendable, (self.dst_ip, self.dst_port))
             seqnum = self.sequence_number
-            t = Timer(1, lambda: self.resend(1, seqnum, sendable))
+            #t = Timer(1, lambda: self.resend(1, seqnum, sendable))
             #print(t)
-            self.timer_dic[seqnum] = t
-            t.start()
-            print(self.timer_dic[seqnum])
+            #self.timer_dic[seqnum] = t
+            #t.start()
+            #print(self.timer_dic[seqnum])
             #self.timer_dic[self.sequence_number].start()
             self.ack = False
             self.last_sent = self.sequence_number
             self.sequence_number += 1
         while not self.ack:
             #print("waiting")
-            # time.sleep(0.01)
-            # self.waitingtime += 0.01
-            # if self.waitingtime > .25:
-            #     #resend the thing
-            #     self.socket.sendto(sendable, (self.dst_ip, self.dst_port))
-            #     self.waitingtime = 0
-            pass
+             time.sleep(0.01)
+             self.waitingtime += 0.01
+             if self.waitingtime > .25:
+                 #resend the thing
+                 self.socket.sendto(sendable, (self.dst_ip, self.dst_port))
+                 self.waitingtime = 0
+            #pass
         #print(self.timer_dic[self.last_sent])
         #t.cancel()
         #self.timer_dic[self.last_sent].cancel()
@@ -86,26 +86,27 @@ class Streamer:
         packets = []
         # data, addr = self.socket.recvfrom()
         # print(self.rb)
-        if self.rb:
-            #print(self.rb)
-            for i in self.rb:
-                if self.rec_num > int(struct.unpack('hh', i[:4])[0]):
-                    #should not be here. drop packet
-                    self.rb.remove(i)
-                elif self.rec_num == int(struct.unpack('hh', i[:4])[0]):
-                    # nextseqnumfound = True
-                    packets.append(i[20:])
-                    #print(i, len(self.rb))
-                    self.rb.remove(i)
-                    self.rec_num += 1
-            returnable = b''
-            for i in range(len(packets)):
-                # stitch packets together
-                returnable += packets[i]
-                print(packets[i])
-            return returnable
-        else:
-            return b''
+
+        while not self.rb:
+            pass
+
+        for i in self.rb:
+            if self.rec_num > int(struct.unpack('hh', i[:4])[0]):
+                #should not be here. drop packet
+                self.rb.remove(i)
+            elif self.rec_num == int(struct.unpack('hh', i[:4])[0]):
+                # nextseqnumfound = True
+                packets.append(i[20:])
+                #print(i, len(self.rb))
+                self.rb.remove(i)
+                self.rec_num += 1
+        returnable = b''
+        for i in range(len(packets)):
+            # stitch packets together
+            returnable += packets[i]
+            #print(packets[i])
+        return returnable
+
 
         # header = data[:2]
         # decodedseq = struct.unpack('h', header)[0]
@@ -193,10 +194,10 @@ class Streamer:
                     # ack. store something that can be checked by the main thread
                     if self.last_sent == struct.unpack('hh', data[:4])[0]:
                         self.ack = True
-                        t = self.timer_dic[self.last_sent]
-                        print(t)
-                        t.cancel()
-                        self.timer_dic.pop(self.last_sent)
+                        # t = self.timer_dic[self.last_sent]
+                        # print(t)
+                        # t.cancel()
+                        # self.timer_dic.pop(self.last_sent)
 
 
                 # ...
