@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/link_state_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/link_state_node.py" afterDir="false" />
     </list>
-    <list id="247aef8c-c27b-4479-9aaf-3b34288ac0ef" name="Changes by bill" comment="" />
+    <list id="247aef8c-c27b-4479-9aaf-3b34288ac0ef" name="Changes by bill" comment="">
+      <change beforePath="$PROJECT_DIR$/lab3/link_state_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/link_state_node.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +22,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/lab3/link_state_node.py">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="2" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="7" end1="7" start2="8" end2="14" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="9" end1="10" start2="16" end2="17" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="13" end1="15" start2="20" end2="55" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="18" end1="19" start2="58" end2="83" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+        <range start1="22" end1="22" start2="86" end2="137" changelist="247aef8c-c27b-4479-9aaf-3b34288ac0ef" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
   <component name="ProjectViewState">
