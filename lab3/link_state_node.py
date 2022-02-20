@@ -6,11 +6,11 @@ class Link_State_Node(Node):
     def __init__(self, id):
         super().__init__(id)
 
-        # dictionary of links (edges), where each edge key (frozenset) keys to an array with latency (int) and seq # (starts at 1)
-        self.edges = {}
+        # nodes of graph
+        self.nodes = [self.id]
 
-        # neighbors is an array containing the ID of every node in graph in no real order
-        self.neighbors = [self.id]
+        # edges of graph, using frozenset as key and keeping track of latency and seq num
+        self.edges = {}
 
     # Return a string
     def __str__(self):
@@ -28,12 +28,8 @@ class Link_State_Node(Node):
             # link
             self.edges[link] = [latency, 1]
             # check if given node needs to be added to neighbors
-            if neighbor not in self.neighbors:
-                self.neighbors.append(neighbor)
-                # key list and val list for making json objects
-                # json gives me data science pipeline ptsd hehe Bill dont delete this comment they need to know
-                key_list = list(self.edges.keys())
-                val_list = list(self.edges.values())
+            if neighbor not in self.nodes:
+                self.nodes.append(neighbor)
                 for edge in self.edges:
                     if self.edges[edge][0] == -1:
                         # dont do anything
@@ -44,95 +40,89 @@ class Link_State_Node(Node):
                     nodes = []
                     for node in edge:
                         nodes.append(node)
-                    message = {"nodes": nodes,
-                                     "latency": self.edges[edge][0],
-                                     "sequence number": self.edges[edge][1]}
+                    message = { "nodes": nodes,
+                                "latency": self.edges[edge][0],
+                                "sequence number": self.edges[edge][1]}
                     self.send_to_neighbor(neighbor, json.dumps(message))
         # create routing message
-        message = {"nodes": [self.id, neighbor],
-                         "latency": latency,
-                         "sequence number": self.edges[link][1]}
+        message = { "nodes": [self.id, neighbor],
+                    "latency": latency,
+                    "sequence number": self.edges[link][1]}
         self.send_to_neighbors(json.dumps(message))
 
     # Fill in this function
     def process_incoming_routing_message(self, m):
         # get message and un-json it
         edge = json.loads(m)
-        nodes = frozenset([edge["nodes"][0], edge["nodes"][1]])
+        # get the nodes the edge connects
+        node1 = edge["nodes"][0]
+        node2 = edge["nodes"][1]
+        edgenodes = frozenset([node1, node2])
 
         # update neighbors
-        if edge["nodes"][0] not in self.neighbors:
-            self.neighbors.append(edge["nodes"][0])
-        if edge["nodes"][1] not in self.neighbors:
-            self.neighbors.append(edge["nodes"][1])
+        if node1 not in self.nodes:
+            self.nodes.append(node1)
+        if node2 not in self.nodes:
+            self.nodes.append(node2)
 
         # update edges based on message
-        if nodes not in self.edges:
-            self.edges[nodes] = [edge["latency"], edge["sequence number"]]
+        if edgenodes not in self.edges:
+            self.edges[edgenodes] = [edge["latency"], edge["sequence number"]]
             self.send_to_neighbors(m)
 
         # seq num update
         # so THIS is what seq num is for
-        if self.edges[nodes][1] < edge["sequence number"]:
-            self.edges[nodes] = [edge["latency"], edge["sequence number"]]
+        if self.edges[edgenodes][1] < edge["sequence number"]:
+            self.edges[edgenodes] = [edge["latency"], edge["sequence number"]]
             self.send_to_neighbors(m)
         else:
-            message = {"nodes": edge["nodes"],
-                             "latency": self.edges[nodes][0],
-                             "sequence number": self.edges[nodes][1]}
-            self.send_to_neighbor(edge["nodes"][0], json.dumps(message))
+            message = { "nodes": edge["nodes"],
+                        "latency": self.edges[edgenodes][0],
+                        "sequence number": self.edges[edgenodes][1]}
+            self.send_to_neighbor(node1, json.dumps(message))
 
     # Return a neighbor, -1 if no path to destination
     def get_next_hop(self, destination):
         # djikstra time
-        self.neighbors.sort()
-        num_nodes = len(self.neighbors)
+        self.nodes.sort()
+        num_nodes = len(self.nodes)
 
-        # create index / id matrices because sometimes the IDs get higher than number of IDS
-        indexToID = {}
-        idToIndex = {}
-        index = 0
-        for node in self.neighbors:
-            idToIndex[node] = index
-            indexToID[index] = node
-            index += 1
-
-        # create and fill distance matrix
+        # dist path visited lists
         dist = [float("inf")] * num_nodes
-        dist[idToIndex[self.id]] = 0
+        dist[self.nodes.index(self.id)] = 0
 
-        # create path matrix (array that contains array of ints to keep track of shortest path to each node)
         paths = [None] * num_nodes
-        for x in range(num_nodes):
-            paths[x] = [idToIndex[self.id]]
+        for i in range(num_nodes):
+            paths[i] = [self.nodes.index(self.id)]
 
-        shortPathSet = [False] * num_nodes
+        visited = [False] * num_nodes
 
-        while False in shortPathSet:
+        # the djikstra loop tm
+        while False in visited:
             min = float("inf")
             for x in range(num_nodes):
-                if dist[x] < min and shortPathSet[x] is False:
+                if dist[x] < min and visited[x] is False:
                     min = dist[x]
-                    min_index = x
+                    target_node = x
 
-            # if still inf, then no path to it
+            # no path if still inf
             if min == float("inf"):
                 return -1
-            # check if visiting desired node. If so, return second element in path (first one after self)
-            if indexToID[min_index] == destination:
-                if len(paths[min_index]) == 1:
-                    return indexToID[min_index]
+
+            # if dest found, done!
+            if self.nodes[target_node] == destination:
+                if len(paths[target_node]) == 1:
+                    return self.nodes[target_node]
                 else:
-                    return indexToID[paths[min_index][1]]
+                    return self.nodes[paths[target_node][1]]
 
-            shortPathSet[min_index] = True
+            # else, do the djikstra neighbor edge thing
+            visited[target_node] = True
 
-            for y in range(num_nodes):
-                # if edge exists, that edge is not -1, y has not been visited, and the distance to y is greater than distance to (min + edge connecting min to y), update
-                edgeToCheck = frozenset([indexToID[y], indexToID[min_index]])
-                if edgeToCheck in self.edges:
-                    if shortPathSet[y] is False and self.edges[edgeToCheck][0] > -1 and dist[y] > dist[min_index] + self.edges[edgeToCheck][0]:
-                        dist[y] = dist[min_index] + self.edges[edgeToCheck][0]
-                        paths[y] = paths[min_index][:]
-                        paths[y].append(y)
+            for i in range(num_nodes):
+                target_edge = frozenset([self.nodes[i], self.nodes[target_node]])
+                if target_edge in self.edges and visited[i] is False and dist[i] > dist[target_node] + self.edges[target_edge][0]:
+                    dist[i] = dist[target_node] + self.edges[target_edge][0]
+                    paths[i] = paths[target_node][:]
+                    paths[i].append(i)
         return -1
