@@ -121,7 +121,7 @@ class Link_State_Node(Node):
 
             for i in range(num_nodes):
                 target_edge = frozenset([self.nodes[i], self.nodes[target_node]])
-                if target_edge in self.edges and visited[i] is False and dist[i] > dist[target_node] + self.edges[target_edge][0]:
+                if target_edge in self.edges and self.edges[target_edge][0] > -1 and visited[i] is False and dist[i] > dist[target_node] + self.edges[target_edge][0]:
                     dist[i] = dist[target_node] + self.edges[target_edge][0]
                     paths[i] = paths[target_node][:]
                     paths[i].append(i)
