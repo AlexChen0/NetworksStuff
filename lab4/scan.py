@@ -3,8 +3,11 @@ import time
 # REMEMBER TO FOLLOW INSTRUCTIONS FOR SUBMISSION TO ADD dnspython
 import dns
 import dns.resolver
+import dns.reversename
 import sys
 import os
+import ssl
+import socket
 
 
 # part 1 Scanner Framework
@@ -46,6 +49,10 @@ def scan(targetfile, outputfile):
         # tls_versions
         # root_ca
         # rdns_names
+        rdnsNames = []
+        for ip in ipv4s:
+            rdnsNames.append(str(dns.resolver.resolve(str(dns.reversename.from_address(ip))), "PTR")[0])
+        LocalDict["rdns_names"] = rdnsNames
         # rtt_range
         # geo_locations owo
         theDictThatBecomesJSONLater[i] = LocalDict
