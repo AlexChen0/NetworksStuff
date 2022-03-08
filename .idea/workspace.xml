@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/distance_vector_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/distance_vector_node.py" afterDir="false" />
     </list>
-    <list id="0c48b519-870b-4056-875c-09a732b83679" name="Changes by bill" comment="">
-      <change beforePath="$PROJECT_DIR$/lab3/link_state_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/link_state_node.py" afterDir="false" />
-    </list>
+    <list id="0c48b519-870b-4056-875c-09a732b83679" name="Changes by bill" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +26,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
