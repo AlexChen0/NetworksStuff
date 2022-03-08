@@ -6,6 +6,9 @@
       <change beforePath="$PROJECT_DIR$/lab4/scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/scan.py" afterDir="false" />
     </list>
     <list id="0c48b519-870b-4056-875c-09a732b83679" name="Changes by bill" comment="" />
+    <list id="4cc99f20-e330-4aa1-9409-ca6aa9025cca" name="Changes by Erica" comment="">
+      <change beforePath="$PROJECT_DIR$/lab4/scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/scan.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +23,25 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/lab4/scan.py">
+      <ranges>
+        <range start1="2" end1="3" start2="2" end2="3" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="9" end1="9" start2="9" end2="10" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="11" end1="11" start2="12" end2="19" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="45" end1="45" start2="53" end2="59" changelist="4cc99f20-e330-4aa1-9409-ca6aa9025cca" />
+        <range start1="46" end1="46" start2="60" end2="68" changelist="4cc99f20-e330-4aa1-9409-ca6aa9025cca" />
+        <range start1="47" end1="47" start2="69" end2="74" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="48" end1="48" start2="75" end2="80" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="49" end1="49" start2="81" end2="99" changelist="4cc99f20-e330-4aa1-9409-ca6aa9025cca" />
+        <range start1="50" end1="50" start2="100" end2="106" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="55" end1="55" start2="111" end2="112" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="56" end1="56" start2="113" end2="117" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="57" end1="57" start2="118" end2="120" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
+        <range start1="64" end1="64" start2="127" end2="144" changelist="4cc99f20-e330-4aa1-9409-ca6aa9025cca" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
   <component name="ProjectViewState">
