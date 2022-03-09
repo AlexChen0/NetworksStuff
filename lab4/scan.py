@@ -9,13 +9,11 @@ import os
 import ssl
 import requests
 import socket
+import subprocess
 
-def DingyWorkaround(cmd_to_run):
-    '''Returns a bytearray of command output'''
-    os.system(cmd_to_run + " > OwO.uwu")
-    temp_file = open("OwO.uwu", "r")
-    the_lines = temp_file.readlines()
-    os.remove("OwO.uwu")
+def DingyWorkaround(server, version):
+    result = subprocess.check_output(["openssl", "s_client", version, "-connect", server],
+      timeout=2, stderr=subprocess.STDOUT).decode("utf-8")
     return the_lines
 
 # part 1 Scanner Framework
@@ -51,9 +49,9 @@ def scan(targetfile, outputfile):
         except:
             LocalDict["ipv6_addresses"] = []
         # http_server
-        respheaders = dict(requests.get(i).headers)
+        respheaders = dict(requests.get('https://' + i).headers)
         http_server_val = None
-        if respheaders.has_key("Server"):
+        if respheaders.get("Server"):
             http_server_val = respheaders["Server"]
         LocalDict["http_server"] = http_server_val
 
@@ -83,7 +81,7 @@ def scan(targetfile, outputfile):
         handshakeWorked = False
         #Bill help ^ we need to use the command that prof gave us to check if the handshake worked or not
         # problem is idk how to do that so uhhhh uwu
-        if(DingyWorkaround("echo | openssl s_client -tls1_3 -connect " + i + ":443")[0]): # this line def wrong
+        if(DingyWorkaround(i, "-tls1_3")): # this line def wrong
             thisSupports.append("TLSv1.3")
         if (DingyWorkaround("echo | openssl s_client -tls1_2 -connect " + i + ":443")[0]):  # this line def wrong
             thisSupports.append("TLSv1.2")
@@ -119,10 +117,10 @@ def scan(targetfile, outputfile):
         # Bill help
 
         theDictThatBecomesJSONLater[i] = LocalDict
-    print(theDictThatBecomesJSONLater)
     theJsonObject = json.dumps(theDictThatBecomesJSONLater)
     with open(outputfile, "w") as f:
         json.dump(theJsonObject, f, sort_keys=True, indent=4)
+    print(outputfile)
     return 0
 
 def stupidrtt(iplst):
