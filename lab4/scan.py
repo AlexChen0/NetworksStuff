@@ -10,6 +10,7 @@ import ssl
 import requests
 import socket
 import subprocess
+import maxminddb
 
 def DingyWorkaround(server, version):
     result = subprocess.check_output(["openssl", "s_client", version, "-connect", server],
@@ -77,30 +78,30 @@ def scan(targetfile, outputfile):
             LocalDict["hsts"] = False
 
         # tls_versions
-        thisSupports = []
-        handshakeWorked = False
-        #Bill help ^ we need to use the command that prof gave us to check if the handshake worked or not
-        # problem is idk how to do that so uhhhh uwu
-        if(DingyWorkaround(i, "-tls1_3")): # this line def wrong
-            thisSupports.append("TLSv1.3")
-        if (DingyWorkaround("echo | openssl s_client -tls1_2 -connect " + i + ":443")[0]):  # this line def wrong
-            thisSupports.append("TLSv1.2")
-        if (DingyWorkaround("echo | openssl s_client -tls1_1 -connect " + i + ":443")[0]):  # this line def wrong
-            thisSupports.append("TLSv1.1")
-        if (DingyWorkaround("echo | openssl s_client -tls1_0 -connect " + i + ":443")[0]):  # this line def wrong
-            thisSupports.append("TLSv1.0")
-        if (DingyWorkaround("echo | openssl s_client -ssl_2 -connect " + i + ":443")[0]):  # this line def wrong
-            thisSupports.append("SSLv2")
-        if (DingyWorkaround("echo | openssl s_client -ssl_3 -connect " + i + ":443")[0]):  # this line def wrong
-            thisSupports.append("SSLv3")
-        LocalDict["tls_versions"] = thisSupports
+        # thisSupports = []
+        # handshakeWorked = False
+        # #Bill help ^ we need to use the command that prof gave us to check if the handshake worked or not
+        # # problem is idk how to do that so uhhhh uwu
+        # if(DingyWorkaround(i, "-tls1_3")): # this line def wrong
+        #     thisSupports.append("TLSv1.3")
+        # if (DingyWorkaround("echo | openssl s_client -tls1_2 -connect " + i + ":443")[0]):  # this line def wrong
+        #     thisSupports.append("TLSv1.2")
+        # if (DingyWorkaround("echo | openssl s_client -tls1_1 -connect " + i + ":443")[0]):  # this line def wrong
+        #     thisSupports.append("TLSv1.1")
+        # if (DingyWorkaround("echo | openssl s_client -tls1_0 -connect " + i + ":443")[0]):  # this line def wrong
+        #     thisSupports.append("TLSv1.0")
+        # if (DingyWorkaround("echo | openssl s_client -ssl_2 -connect " + i + ":443")[0]):  # this line def wrong
+        #     thisSupports.append("SSLv2")
+        # if (DingyWorkaround("echo | openssl s_client -ssl_3 -connect " + i + ":443")[0]):  # this line def wrong
+        #     thisSupports.append("SSLv3")
+        # LocalDict["tls_versions"] = thisSupports
 
         # root_ca
-        try:
-            ca = DingyWorkaround("echo | openssl s_client -connect" + i + ":443")
-            LocalDict["root_ca"] = ca[0]
-        except:
-            LocalDict["root_ca"] = None
+        # try:
+        #     ca = DingyWorkaround("echo | openssl s_client -connect" + i + ":443")
+        #     LocalDict["root_ca"] = ca[0]
+        # except:
+        #     LocalDict["root_ca"] = None
 
         # rdns_names
         rdnsNames = []
