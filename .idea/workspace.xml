@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75e33908-452e-49ba-a935-8ecc3dbbb69f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lab4/report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab4/scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/scan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/GeoLite2-City_20201103/COPYRIGHT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/GeoLite2-City_20201103/GeoLite2-City.mmdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/GeoLite2-City_20201103/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/GeoLite2-City_20201103/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/OwO.uwu" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/x.json" beforeDir="false" />
     </list>
     <list id="0c48b519-870b-4056-875c-09a732b83679" name="Changes by bill" comment="">
       <change beforePath="$PROJECT_DIR$/lab4/scan.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/scan.py" afterDir="false" />
@@ -23,14 +29,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/lab4/scan.py">
-      <ranges>
-        <range start1="79" end1="96" start2="79" end2="96" changelist="75e33908-452e-49ba-a935-8ecc3dbbb69f" />
-        <range start1="98" end1="103" start2="98" end2="103" changelist="0c48b519-870b-4056-875c-09a732b83679" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="247IBeva6aQF6oTFyUsqS5lrYOq" />
   <component name="ProjectViewState">

@@ -1,0 +1,553 @@
+{
+    "amazon.com": {
+        "geo_locations": [
+            ", Virginia, United States"
+        ],
+        "hsts": false,
+        "http_server": "Server",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "176.32.103.205",
+            "54.239.28.85",
+            "205.251.242.103"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "s3-console-us-standard.console.aws.amazon.com."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": [
+            35.0,
+            40.0
+        ],
+        "scan_time": 1647043417.2377963
+    },
+    "asee.org": {
+        "geo_locations": [
+            ", Virginia, United States"
+        ],
+        "hsts": false,
+        "http_server": null,
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "20.49.104.48"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043488.1273034
+    },
+    "auditoryneuroscience.com": {
+        "geo_locations": [
+            "\u9999\u6e2f\u5cf6 Hong Kong Island, \u9999\u6e2f Hong Kong, \u4e2d\u56fd"
+        ],
+        "hsts": false,
+        "http_server": "Apache/2.4.41 (Ubuntu)",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "144.214.26.111"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "twinkle.bms.cityu.edu.hk."
+        ],
+        "redirect_to_https": false,
+        "rtt_range": [
+            185.0,
+            185.0
+        ],
+        "scan_time": 1647043484.5676928
+    },
+    "clocktab.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "cloudflare",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "172.67.220.24",
+            "104.21.35.119"
+        ],
+        "ipv6_addresses": [
+            "2606:4700:3036::ac43:dc18",
+            "2606:4700:3030::6815:2377"
+        ],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": [
+            12.0,
+            14.0
+        ],
+        "scan_time": 1647043483.336264
+    },
+    "en.wikipedia.org": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Varnish",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "208.80.154.224"
+        ],
+        "ipv6_addresses": [
+            "2620:0:861:ed1a::1"
+        ],
+        "rdns_names": [
+            "text-lb.eqiad.wikimedia.org."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043403.3769314
+    },
+    "facebook.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": null,
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "157.240.2.35"
+        ],
+        "ipv6_addresses": [
+            "2a03:2880:f127:283:face:b00c:0:25de"
+        ],
+        "rdns_names": [
+            "edge-star-mini-shv-01-ort2.facebook.com."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": [
+            19.0,
+            19.0
+        ],
+        "scan_time": 1647043416.719695
+    },
+    "fandom.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Varnish",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "151.101.128.194",
+            "151.101.64.194",
+            "151.101.0.194",
+            "151.101.192.194"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043435.1102006
+    },
+    "gradeinflation.com": {
+        "geo_locations": [
+            ", British Columbia, Canada"
+        ],
+        "hsts": false,
+        "http_server": "nginx",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "51.79.45.180"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "gw1.ahs5.r4l.com."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": [
+            31.0,
+            31.0
+        ],
+        "scan_time": 1647043490.7183626
+    },
+    "illinois.edu": {
+        "geo_locations": [
+            "Urbana, Illinois, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache/2.2.15 (Red Hat) mod_ssl/2.2.15 OpenSSL/1.0.1e-fips",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "192.17.172.3"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "tardis.techservices.illinois.edu."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043479.1305435
+    },
+    "imdb.com": {
+        "geo_locations": [
+            ", Virginia, United States"
+        ],
+        "hsts": false,
+        "http_server": "Server",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "52.94.228.167",
+            "52.94.225.248",
+            "52.94.237.74"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": [
+            31.0,
+            38.0
+        ],
+        "scan_time": 1647043431.4625235
+    },
+    "instagram.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "proxygen-bolt",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "157.240.18.174"
+        ],
+        "ipv6_addresses": [
+            "2a03:2880:f227:e5:face:b00c:0:4420"
+        ],
+        "rdns_names": [
+            "instagram-p42-shv-02-ort2.fbcdn.net."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": [
+            14.0,
+            14.0
+        ],
+        "scan_time": 1647043460.9930117
+    },
+    "it.eecs.northwestern.edu": {
+        "geo_locations": [
+            "Chicago, Illinois, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache/2.4.37 (Red Hat Enterprise Linux) OpenSSL/1.1.1k",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "129.105.5.142"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "it.ece.northwestern.edu."
+        ],
+        "redirect_to_https": false,
+        "rtt_range": null,
+        "scan_time": 1647043474.7283955
+    },
+    "kellogg.northwestern.edu": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Microsoft-IIS/10.0",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "165.124.147.150"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "kelloggalumni.kellogg.northwestern.edu."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043470.4021156
+    },
+    "kli.org": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "cloudflare",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "104.21.4.169",
+            "172.67.132.72"
+        ],
+        "ipv6_addresses": [
+            "2606:4700:3033::6815:4a9",
+            "2606:4700:3035::ac43:8448"
+        ],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": [
+            12.0,
+            13.0
+        ],
+        "scan_time": 1647043497.9634817
+    },
+    "mccormick.northwestern.edu": {
+        "geo_locations": [
+            "Chicago, Illinois, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache/2.4.7 (Ubuntu)",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "129.105.1.129"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "mccormick.northwestern.edu."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043468.2186577
+    },
+    "northwestern.edu": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "BigIP",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "129.105.136.48"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "evcommon-caesar-vip.northwestern.edu."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043466.0959325
+    },
+    "pinterest.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": null,
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "151.101.192.84",
+            "151.101.0.84",
+            "151.101.64.84",
+            "151.101.128.84"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043443.7300587
+    },
+    "pmichaud.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "23.254.203.248"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "hwsrv-233708.hostwindsdns.com."
+        ],
+        "redirect_to_https": false,
+        "rtt_range": [
+            48.0,
+            48.0
+        ],
+        "scan_time": 1647043495.8489926
+    },
+    "reddit.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": true,
+        "http_server": "snooserv",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "151.101.193.140",
+            "151.101.65.140",
+            "151.101.1.140",
+            "151.101.129.140"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043422.936426
+    },
+    "spacejam.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache/2.4.51 () OpenSSL/1.0.2k-fips",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "75.2.104.223",
+            "99.83.180.228"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "a259cf76d74e1f65f.awsglobalaccelerator.com.",
+            "a259cf76d74e1f65f.awsglobalaccelerator.com."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043491.4611788
+    },
+    "stevetarzia.com": {
+        "geo_locations": [
+            ", Oregon, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache/2.2.34 (Amazon)",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "54.245.121.172"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "grits.stevetarzia.com."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": [
+            59.0,
+            59.0
+        ],
+        "scan_time": 1647043481.3127615
+    },
+    "tripadvisor.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "envoy",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "151.101.66.28",
+            "151.101.194.28",
+            "151.101.130.28",
+            "151.101.2.28"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043452.3491068
+    },
+    "twitter.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "tsa_b",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "104.244.42.129",
+            "104.244.42.65"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": [
+            50.0,
+            53.0
+        ],
+        "scan_time": 1647043405.5120003
+    },
+    "uchicago.edu": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "34.200.129.209"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "ec2-34-200-129-209.compute-1.amazonaws.com."
+        ],
+        "redirect_to_https": false,
+        "rtt_range": null,
+        "scan_time": 1647043476.8570766
+    },
+    "users.cs.northwestern.edu": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "Apache",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "165.124.180.20"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [
+            "web1.cs.northwestern.edu."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043472.5244238
+    },
+    "walmart.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": null,
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "161.170.232.170",
+            "161.170.230.170"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043461.5258088
+    },
+    "yelp.com": {
+        "geo_locations": [
+            "Stockholms kommun, , Sverige"
+        ],
+        "hsts": false,
+        "http_server": "Varnish",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "146.75.76.116"
+        ],
+        "ipv6_addresses": [],
+        "rdns_names": [],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043420.8579397
+    },
+    "youtube.com": {
+        "geo_locations": [
+            ", Kansas, United States"
+        ],
+        "hsts": false,
+        "http_server": "ESF",
+        "insecure_http": true,
+        "ipv4_addresses": [
+            "172.217.0.174"
+        ],
+        "ipv6_addresses": [
+            "2607:f8b0:4009:802::200e"
+        ],
+        "rdns_names": [
+            "mia09s16-in-f14.1e100.net."
+        ],
+        "redirect_to_https": true,
+        "rtt_range": null,
+        "scan_time": 1647043401.274993
+    }
+}
